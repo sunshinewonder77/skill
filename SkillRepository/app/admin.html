@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Listing using Angular JS</title>
+    <!-- Angular File Path -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-filter.js"></script>
+
+    <!-- Custom File Sheets and Scripts -->
+    <link rel="stylesheet" href="css/dataTables.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-app="myapp">
+    <main class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <header class="row">
+                    <div class="col-md-12 mt-5">
+                        <h2>
+                            <b>Employee Skill Sets</b>
+                        </h2>
+                        <hr>
+                    </div>
+                </header>
+                <section class="row mt-3" ng-controller="getctrl">
+                    <div class="col-md-12">
+                        <table class="table table-striped table-bordered full-width" id="SkillsTable">
+                            <thead>
+                                <tr>
+                                    <th>Emp ID</th>
+                                    <th>Skill Set</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="(key, value) in empSkills | groupBy: 'employee.id'">
+                                    <td>{{ key }}</td>                                   
+                                    <td>
+                                        <div ng-repeat="skillData in value">
+                                            <ul>
+                                                {{skillData.skills.skillName}} - {{skillData.yearsOfExp}} Years
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script src="js/bootstrapscripts.js"></script>
+    <script src="js/dataTables.js"></script>
+    <script src="js/getcontroller.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#SkillsTable').DataTable();
+        });
+    </script>
+</body>
+</html>

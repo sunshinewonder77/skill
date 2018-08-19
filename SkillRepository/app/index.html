@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Employee Listing using Angular JS</title>
+    <!-- Angular File Path -->
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-filter.js"></script>
+
+    <!-- Custom File Sheets and Scripts -->
+    <link rel="stylesheet" href="css/dataTables.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body  ng-app="myapp">
+    <main class="container-fluid">
+        <div class="row">
+            <div class="container">
+                <header class="row">
+                    <div class="col-md-12 mt-5">
+                        <h2>
+                            <b>Employee Skill Sets</b>
+                        </h2>
+                        <hr>
+                    </div>
+                </header>
+                <section class="row mt-3" ng-controller="addctrl">
+                    <form action="" method = "post" ng-submit="submit()" name="EmployeeForm" class="full-width">
+                        <div class="col-md-12">
+                            <div class="row form-emp mb-5">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label class="col-md-4 col-form-label">First Name</label>
+                                        <div class="col-md-1 col-form-label">:</div>
+                                        <div class="col-md-7">
+                                            <div class="form-control-plaintext">Sundar</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-4 col-form-label">Last Name</label>
+                                        <div class="col-md-1 col-form-label">:</div>
+                                        <div class="col-md-7">
+                                            <div class="form-control-plaintext">Mani</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-4 col-form-label">Designation</label>
+                                        <div class="col-md-1 col-form-label">:</div>
+                                        <div class="col-md-7">
+                                            <div class="form-control-plaintext">Developer</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="accordion" id="accordionExample">
+                                <div class="card">
+                                    <div class="card-header" id="headingOne">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Technical
+                                            </button>
+                                        </h5>
+                                    </div>
+
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col-md-4">C/C++</div>
+                                                <div class="col-md-4">
+                                                    <select name="TechCplus" id="TechCplus" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" name="TechCplusEx" id="TechCplusEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-4">Java</div>
+                                                <div class="col-md-4">
+                                                    <select name="TechJava" id="TechJava" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="TechJavaEx" name="TechJavaEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-4">DHTML</div>
+                                                <div class="col-md-4">
+                                                    <select name="TechHTML" id="TechHTML" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" id="TechHTMLEx" name="TechHTMLEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-4">J2EE</div>
+                                                <div class="col-md-4">
+                                                    <select name="TechJ2ee" id="TechJ2ee" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" name="TechJ2eeEx" id="TechJ2eeEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" id="headingTwo">
+                                        <h5 class="mb-0">
+                                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                                                aria-controls="collapseTwo">
+                                                Management
+                                            </button>
+                                        </h5>
+                                    </div>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                        <div class="card-body">
+                                            <div class="row form-group">
+                                                <div class="col-md-4">PMO</div>
+                                                <div class="col-md-4">
+                                                    <select name="ManPMO" id="ManPMO" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" name="ManPMOEx" id="ManPMOEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-4">Screen</div>
+                                                <div class="col-md-4">
+                                                    <select name="ManScr" id="ManScr" class="form-control di-block">
+                                                        <option value="0">0</option>
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
+                                                        <option value="5">5</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <input type="text" name="ManScrEx" ng-model="ManScrEx" id="ManScrEx" class="form-control" placeholder="Enter Exp Years">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center col-md-7 mt-5 mb-5">
+                            <button class="btn btn-success" type="submit" ng-click="serialize($event)">Add skills</button>
+                            <button class="btn btn-warning" type="reset">Reset</button>
+                            <button class="btn btn-danger" >Cancel</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+    <script src="js/app.js"></script>
+    <script src="js/bootstrapscripts.js"></script>
+    <script src="js/dataTables.js"></script>
+    <script src="js/addcontroller.js"></script>
+    <script src="js/directives.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
